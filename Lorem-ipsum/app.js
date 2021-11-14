@@ -25,6 +25,7 @@ form.addEventListener("submit", function (e) {
 
   if (isNaN(value) || value < 0 || value > 9) {
     result.innerHTML = `<p class="result">${text[random]}</p>`;
+    amount.value = 1;
   } else {
     let tempText = text.slice(0, value);
     tempText = tempText
@@ -34,4 +35,5 @@ form.addEventListener("submit", function (e) {
       .join("");
     result.innerHTML = tempText;
   }
+  
 });
