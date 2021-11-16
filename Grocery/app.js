@@ -25,8 +25,8 @@ window.addEventListener("DOMContentLoaded", setupItems);
 // add item
 function addItem(e) {
   e.preventDefault();
-  // console.log(value);
   const value = grocery.value;
+  // console.log(value);
   const id = new Date().getTime().toString();
 
   if (value !== "" && !editFlag) {
@@ -103,7 +103,9 @@ function clearItems() {
 
 function deleteItem(e) {
   const element = e.currentTarget.parentElement.parentElement;
+  // console.log(element);
   const id = element.dataset.id;
+  console.log(id);
 
   list.removeChild(element);
 
