@@ -69,7 +69,7 @@ const menu = [
     category: "shakes",
     price: 16.99,
     img: "./images/item-9.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    desc: "skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.",
   },
   {
     id: 10,
@@ -79,6 +79,14 @@ const menu = [
     img: "./images/item-10.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "diner double",
+    category: "noodles",
+    price: 13.99,
+    img: "./images/item-2.jpeg",
+    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+  }
 ];
 const sectionCenter = document.querySelector(".section-center");
 const btnContainer = document.querySelector(".btn-container");
@@ -118,9 +126,9 @@ function displayMenuButtons() {
     ["all"]
   );
   const categoryBtns = categories
-    .map(function (category) {
-      return `<button type="button" class="filter-btn" data-id=${category}>
-          ${category}
+    .map(function (item) {
+      return `<button type="button" class="filter-btn" data-id=${item}>
+          ${item}
         </button>`;
     })
     .join("");
@@ -134,6 +142,7 @@ function displayMenuButtons() {
       const category = e.currentTarget.dataset.id;
       const menuCategory = menu.filter(function (menuItem) {
         if (menuItem.category === category) {
+          // console.log(menuItem);
           return menuItem;
         }
       });
